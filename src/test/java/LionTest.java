@@ -6,7 +6,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest  {
@@ -28,6 +28,7 @@ public class LionTest  {
     public void lionDoesHaveManeIncorrectSexTypeTest() {
         try {
                 Lion lion = new Lion ("Невалидное значение", feline);
+            fail ("Ожидается, что будет выдано исключение");
         } catch (Exception e) {
             assertEquals("Используйте допустимые значения пола животного - самец или самка", e.getMessage());
         }
